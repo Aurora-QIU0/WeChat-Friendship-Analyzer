@@ -21,3 +21,10 @@ __pycache__/
 venv/
 .DS_Store
 Thumbs.db
+
+# Xiaoyu private runtime material
+xiaoyu/deployment/
+xiaoyu/memory/user_profile.json
+xiaoyu/memory/memory_seed.json
+xiaoyu/memory/private/
+xiaoyu/**/*.local.*
