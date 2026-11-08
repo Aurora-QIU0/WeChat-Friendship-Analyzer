@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WeChat Friendship Analyzer message",
+  "type": "object",
+  "required": ["timestamp", "datetime", "sender", "message_type", "content", "quote_content", "has_attachment"],
+  "additionalProperties": false,
+  "properties": {
+    "timestamp": {"type": "integer", "minimum": 1},
+    "datetime": {"type": "string", "format": "date-time", "pattern": "\\+08:00$"},
+    "sender": {"type": ["string", "null"]},
+    "message_type": {"type": "string", "minLength": 1},
+    "content": {"type": "string"},
+    "quote_content": {"type": ["string", "null"]},
+    "has_attachment": {"type": "boolean"},
+    "source_type_code": {"type": ["integer", "null"]},
+    "quote_status": {"enum": ["available", "unknown", "not_applicable"]},
+    "attachment_type": {"type": ["string", "null"]},
+    "readable_resource": {"type": ["boolean", "null"]},
+    "resource_status": {"enum": ["available", "thumbnail_only", "unavailable", "not_applicable", "unknown"]},
+    "message_index": {"type": "integer", "minimum": 1},
+    "forwarded_bundle_id": {"type": ["string", "null"]},
+    "parent_message_index": {"type": "integer", "minimum": 1},
+    "forwarded_item_index": {"type": "integer", "minimum": 1},
+    "source_sender_label": {"type": ["string", "null"]},
+    "sender_status": {"enum": ["unverified_forwarded_label", "unknown"]}
+  }
+}

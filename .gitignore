@@ -1,0 +1,23 @@
+# Private inputs and outputs
+wechat_data/
+chat_records/
+private_data/
+raw_data/
+private_reports/
+personal_exports/
+*.jsonl
+!examples/sample_messages.jsonl
+*.csv
+*.zip
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Python and operating system files
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db

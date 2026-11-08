@@ -1,0 +1,3 @@
+{"timestamp":1735704000,"datetime":"2025-01-01T12:00:00+08:00","sender":"示例用户A","message_type":"text","content":"周末一起去图书馆吗？","quote_content":null,"has_attachment":false,"message_index":1}
+{"timestamp":1735704060,"datetime":"2025-01-01T12:01:00+08:00","sender":"示例用户B","message_type":"quote","content":"可以，下午两点怎么样？","quote_content":"周末一起去图书馆吗？","has_attachment":false,"message_index":2}
+{"timestamp":1735704120,"datetime":"2025-01-01T12:02:00+08:00","sender":"系统","message_type":"system","content":"虚构的系统事件示例","quote_content":null,"has_attachment":false,"message_index":3}
