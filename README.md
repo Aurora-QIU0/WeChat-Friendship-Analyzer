@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/readme-hero-v2.svg" alt="WeChat Friendship Analyzer — 本地数据整理、WeFlow 适配与小鱼人格" width="100%">
+  <img src="assets/readme-hero-v3.svg" alt="WeChat Friendship Analyzer — WeFlow 提取、聊天分析、资料整合与小智接入" width="100%">
 </p>
 
 <h1 align="center">微信会话数据整理与分析</h1>
 
-<p align="center">让聊天数据有条理，让 AI 交流更自然。<br><sub>Python 3.10+ · 本地数据工具 · 可复核交付</sub></p>
+<p align="center">从聊天记录出发，整理成小智可用的人格资料。<br><sub>Python 3.10+ · 本地数据工具 · 可复核交付</sub></p>
 
 <p align="center">
   <a href="#功能导航"><strong>功能导航</strong></a> &nbsp; / &nbsp;
@@ -17,85 +17,79 @@
 
 ## 功能导航
 
-<table>
-<tr>
+<p align="center"><strong>① WeFlow 提取 → ② 整理与分析 → ③ 整合资料，接入小智</strong></p>
+
+<table><tr>
 <td width="33%" valign="top">
-<h3>🗂️ 数据整理</h3>
-<p>把已授权取得的聊天记录，整理成可校验、可审计的数据包。</p>
-<p><sub>JSONL · 月度统计 · SHA-256</sub></p>
-<a href="docs/workflow.md"><strong>开始整理 →</strong></a>
+<h3>① 🔌 WeFlow 提取</h3>
+<p>在本地取得指定好友的聊天数据，再将支持的原始 JSON 分页文件转为 JSONL。</p>
+<p><sub>外部工具提取 · 本项目离线转换</sub></p>
+<a href="docs/weflow-integration.md"><strong>从提取开始 →</strong></a>
 </td>
 <td width="33%" valign="top">
-<h3>🔌 WeFlow 接入</h3>
-<p>转换单个私聊的原始 API JSON 分页文件，衔接现有分析流程。</p>
-<p><sub>离线适配 · 不自动读取数据库</sub></p>
-<a href="docs/weflow-integration.md"><strong>查看接入方法 →</strong></a>
+<h3>② 🗂️ 整理与分析</h3>
+<p>先核对消息完整性，再结合上下文分析交流方式，区分事实与推测。</p>
+<p><sub>校验 · 审计 · 上下文分析</sub></p>
+<a href="docs/workflow.md"><strong>查看分析流程 →</strong></a>
 </td>
 <td width="33%" valign="top">
-<h3>🐟 小鱼 Xiaoyu</h3>
-<p>自然接话、适当幽默、愿意倾听，也能认真帮助你排查技术问题。</p>
-<p><sub>三版提示词 · 原创示例 · 记忆模板</sub></p>
-<a href="xiaoyu/README.md"><strong>打开人物资料 →</strong></a>
+<h3>③ 🐟 整合并接入小智</h3>
+<p>将抽象风格、独立人格与已确认背景整理为提示词，手动配置到小智云端。</p>
+<p><sub>资料审核 · 角色配置 · 语音验证</sub></p>
+<a href="xiaoyu/README.md"><strong>整合人物资料 →</strong></a>
 </td>
-</tr>
-</table>
+</tr></table>
 
 ## 快速开始
 
-在仓库根目录打开 PowerShell，使用 **Python 3.10+**。脚本仅依赖标准库；下面的对话数据均为虚构。
+实际使用先按 [WeFlow 接入说明](docs/weflow-integration.md) 在本地提取已授权的单个私聊，再保存本转换器支持的原始 API JSON 分页。提取由外部 WeFlow 完成，本仓库不会自动安装组件或读取数据库。
 
-**1. 校验样例并生成审计报告**
+下面用 **4 条虚构消息**演练后续步骤，无需安装 WeFlow。在仓库根目录打开 PowerShell，使用 Python 3.10+：
 
-```powershell
-$sample = "examples/sample_messages.jsonl"
-python -B -X utf8 scripts/validate_jsonl.py $sample --check-privacy
-python -B -X utf8 scripts/audit_data.py $sample `
-  --output private_reports/demo_audit.md
-```
-
-**你会得到：** 消息数量、双方发送统计、月度分布和数据问题报告。
-
-<details>
-<summary><strong>下一步：整理发送者标签并生成 ZIP</strong></summary>
-
-**2. 整理发送者标签并打包**
-
-```powershell
-$sample = "examples/sample_messages.jsonl"
-$checked = "private_data/demo_checked.jsonl"
-python -B -X utf8 scripts/anonymize_data.py $sample `
-  --alias "示例用户A=user_a" --alias "示例用户B=user_b" `
-  --output $checked
-python -B -X utf8 scripts/package_data.py $checked `
-  --document docs/data-format.md --output personal_exports/demo.zip
-```
-
-报告和 ZIP 分别写入 `private_reports/` 与 `personal_exports/`。再次运行时请使用新的输出文件名。处理真实会话时，按时间顺序传入多个主会话 JSONL，合并转发内嵌记录可通过 `--forwarded` 单独附带。
-
-</details>
-
-<details>
-<summary><strong>试试 WeFlow：转换 4 条虚构消息</strong></summary>
+**1. 接收 WeFlow 数据并转换**
 
 ```powershell
 $inputFile = "examples/weflow_response.sample.json"
+$messages = "private_data/weflow_demo.jsonl"
 python -B -X utf8 scripts/import_weflow.py $inputFile `
-  --expected-count 4 --output private_data/weflow_demo.jsonl
+  --expected-count 4 --output $messages
 ```
 
-无需安装 WeFlow 即可运行此样例。真实数据的分页规则和支持范围见 [接入说明](docs/weflow-integration.md)。再次运行请换新输出文件名。
+**2. 校验、审计，再分析**
+
+```powershell
+python -B -X utf8 scripts/validate_jsonl.py $messages --check-privacy
+python -B -X utf8 scripts/audit_data.py $messages `
+  --output private_reports/weflow_demo_audit.md
+```
+
+先复核总量、双方数量、系统事件和时间跨度，再按 [分析方法](docs/analysis-methodology.md) 与 [分析提示词](templates/analysis_prompt.md) 开展上下文分析。统计报告不会自动生成关系结论。
+
+**3. 整合资料，接入小智**
+
+按 [完整工作流](docs/workflow.md) 提炼可复用风格，整合到 [小鱼提示词](xiaoyu/character/system_prompt.md)。确认不含第三方私人信息后，按 [小智配置指南](xiaoyu/README.md) 手动保存到云端，再测试语音表现。不要把原始聊天 ZIP 当作角色提示词上传。
+
+<details>
+<summary><strong>可选：生成本地分析交付包</strong></summary>
+
+```powershell
+python -B -X utf8 scripts/package_data.py private_data/weflow_demo.jsonl `
+  --document docs/data-format.md --output personal_exports/weflow_demo.zip
+```
+
+再次运行请换新输出文件名。需要别名整理时可先运行 [anonymize_data.py](scripts/anonymize_data.py)；它不自动消除正文隐私。主会话与转发内嵌记录分别统计，已有独立转发文件可通过 `--forwarded` 附带。WeFlow 转换器本版不展开内嵌转发。
 
 </details>
 
 ## 每一步，都有可检查的结果
 
-| 阶段 | 你会得到 | 工具 |
+| 顺序 | 产物 | 入口 |
 | :--- | :--- | :--- |
-| **01 · 接入** | 将 WeFlow 原始 JSON 统一为 JSONL | [import_weflow.py](scripts/import_weflow.py) |
-| **02 · 校验** | 字段、顺序、重复和可选隐私模式检查 | [validate_jsonl.py](scripts/validate_jsonl.py) |
-| **03 · 审计** | 发送方、月份、消息类型与附件统计 | [audit_data.py](scripts/audit_data.py) |
-| **04 · 整理** | 应用显式别名，保留正文与引用 | [anonymize_data.py](scripts/anonymize_data.py) |
-| **05 · 交付** | ZIP、试解压和 SHA-256 校验 | [package_data.py](scripts/package_data.py) |
+| **01 · 提取与转换** | 本地原始响应、规范 JSONL | [WeFlow 接入](docs/weflow-integration.md) |
+| **02 · 校验与审计** | 完整性检查、发送方与月度统计 | [校验](scripts/validate_jsonl.py) · [审计](scripts/audit_data.py) |
+| **03 · 内容分析** | 有上下文依据的观察与不确定性 | [分析方法](docs/analysis-methodology.md) |
+| **04 · 整合资料** | 独立人格、风格规则、已确认背景 | [小鱼资料](xiaoyu/README.md) |
+| **05 · 接入与验证** | 云端角色配置、实际语音体验 | [配置步骤](xiaoyu/README.md#快速使用) |
 
 ## 小鱼，让对话留一点呼吸感
 
@@ -118,8 +112,8 @@ python -B -X utf8 scripts/import_weflow.py $inputFile `
 
 | 模块 | 已提供 | 待完成 |
 | :--- | :--- | :--- |
+| WeFlow | 离线转换器、虚构样例、测试 | 外部提取环境配置与真实端到端验证 |
 | 数据工具 | 校验、审计、别名整理、打包 | 按实际数据复核结果 |
-| WeFlow | 离线转换器、虚构样例、测试 | 真实环境端到端验证 |
 | 小鱼 | 三版提示词、互动风格、原创示例 | 按设备语音表现调整 |
 | 自定义记忆 | JSON 空模板与接口设计 | 后端实现与接入 |
 
