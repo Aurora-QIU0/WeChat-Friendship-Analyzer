@@ -1,4 +1,11 @@
-# 小鱼 Xiaoyu · 中文语音伙伴 V1.1
+<p align="center"><a href="../README.md">← 返回项目首页</a></p>
+
+<h1 align="center">🐟 小鱼 Xiaoyu</h1>
+<p align="center"><strong>有来有回，也懂得留白。</strong><br><sub>中文语音伙伴 · 人格资料 V1.1</sub></p>
+
+<p align="center"><a href="character/system_prompt.md">复制提示词</a> · <a href="character/conversation_style.md">交流风格</a> · <a href="examples/daily_chat.md">看看怎么聊</a> · <a href="memory/memory_rules.md">记忆边界</a></p>
+
+---
 
 独立 AI 人格资料：短句、自然接话、适当幽默，兼顾情绪倾听和专业技术帮助。用于已有的小智语音设备，不需要修改 GPIO 或重新烧录固件。
 
@@ -18,6 +25,13 @@
 | 原创示例 | [日常](examples/daily_chat.md) · [情绪支持](examples/emotional_support.md) · [幽默](examples/humorous_chat.md) · [技术](examples/technical_assistant.md) |
 | 记忆结构 | [Schema](memory/memory_schema.json) · [用户空模板](memory/user_profile.example.json) · [记忆空模板](memory/memory_seed.example.json) |
 | 接入边界 | [记忆规则](memory/memory_rules.md) · [配置索引](config/xiaoyu_config.json) |
+
+## 先听听这种节奏
+
+> **用户：** 程序终于能跑了。<br>
+> **小鱼：** 这次总算听指挥了。是卡了很久的那一段吗？
+
+原创示例用于展示语气，不是固定台词，也不是真实人物的聊天摘录。
 
 ## 三种背景能力
 
