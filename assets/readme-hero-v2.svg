@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">WeChat Friendship Analyzer</title>
+<desc id="desc">Local data tools, optional WeFlow import, and the independent Xiaoyu voice persona.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f8faf6"/><stop offset="1" stop-color="#eef2fb"/></linearGradient>
+ <linearGradient id="accent"><stop stop-color="#248878"/><stop offset="1" stop-color="#5967a3"/></linearGradient>
+</defs>
+<rect x="1" y="1" width="1198" height="438" rx="24" fill="url(#bg)" stroke="#dce4e7"/>
+<circle cx="1100" cy="5" r="180" fill="#c9e9df" opacity=".35"/>
+<circle cx="1100" cy="5" r="138" fill="none" stroke="#b9d6d2" opacity=".5"/>
+<g font-family="Segoe UI, Arial, sans-serif">
+ <rect x="48" y="38" width="202" height="29" rx="14.5" fill="#e2eee7"/>
+ <circle cx="66" cy="52.5" r="3.5" fill="#378575"/>
+ <text x="79" y="57" font-size="11" letter-spacing="1.7" fill="#356b60">LOCAL-FIRST TOOLKIT</text>
+ <text x="46" y="132" font-size="50" font-weight="700" letter-spacing="-1.7" fill="#203540">WeChat Friendship</text>
+ <text x="46" y="194" font-size="59" font-weight="700" letter-spacing="-1.5" fill="url(#accent)">Analyzer</text>
+ <text x="49" y="230" font-size="17" fill="#657783">Clearer data. More natural conversations.</text>
+ <g transform="translate(845 96)">
+  <rect width="216" height="105" rx="20" fill="#c8e8de" stroke="#a6cfc1"/>
+  <path d="M31 105v20l25-20" fill="#c8e8de" stroke="#a6cfc1"/>
+  <path d="M31 34h120M31 52h90" stroke="#4d8b7a" stroke-width="6" stroke-linecap="round"/>
+  <rect x="100" y="66" width="166" height="77" rx="18" fill="#dcd8f2" stroke="#c4bddf"/>
+  <path d="m227 143 20 14v-18" fill="#dcd8f2"/>
+  <circle cx="138" cy="103" r="5" fill="#776b9b"/><circle cx="164" cy="103" r="5" fill="#776b9b"/><circle cx="190" cy="103" r="5" fill="#776b9b"/>
+ </g>
+ <path d="M49 265h1102" stroke="#d6e0e4"/>
+<g transform="translate(48 290)"><rect width="351" height="102" rx="14" fill="#e7f2ec" stroke="#d0e3d9"/>
+ <text x="22" y="29" fill="#367965" font-size="11" letter-spacing="2">01 / DATA</text>
+ <text x="22" y="57" fill="#2e4050" font-size="23" font-weight="600">From JSONL to clarity</text>
+ <text x="22" y="81" fill="#677787" font-size="13">Validate / Audit / Package</text></g><g transform="translate(424 290)"><rect width="351" height="102" rx="14" fill="#e9f0f8" stroke="#d4dfed"/>
+ <text x="22" y="29" fill="#496d99" font-size="11" letter-spacing="2">02 / WEFLOW</text>
+ <text x="22" y="57" fill="#2e4050" font-size="23" font-weight="600">An optional way in</text>
+ <text x="22" y="81" fill="#677787" font-size="13">Offline JSON adapter</text></g><g transform="translate(800 290)"><rect width="351" height="102" rx="14" fill="#eeebf7" stroke="#ddd7eb"/>
+ <text x="22" y="29" fill="#7c659d" font-size="11" letter-spacing="2">03 / XIAOYU</text>
+ <text x="22" y="57" fill="#2e4050" font-size="23" font-weight="600">A voice with character</text>
+ <text x="22" y="81" fill="#677787" font-size="13">Persona / Style / Memory templates</text></g></g></svg>

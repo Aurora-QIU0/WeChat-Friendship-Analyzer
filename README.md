@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-hero.svg" alt="WeChat Friendship Analyzer — 本地数据整理、WeFlow 适配与小鱼人格" width="100%">
+  <img src="assets/readme-hero-v2.svg" alt="WeChat Friendship Analyzer — 本地数据整理、WeFlow 适配与小鱼人格" width="100%">
 </p>
 
 <h1 align="center">微信会话数据整理与分析</h1>
