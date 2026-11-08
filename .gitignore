@@ -28,3 +28,6 @@ xiaoyu/memory/user_profile.json
 xiaoyu/memory/memory_seed.json
 xiaoyu/memory/private/
 xiaoyu/**/*.local.*
+
+# Local workspace downloads
+*.local.*
