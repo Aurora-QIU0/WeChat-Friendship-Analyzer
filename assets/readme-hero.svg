@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="300" viewBox="0 0 1120 300" role="img" aria-labelledby="title desc">
+  <title id="title">WeChat Friendship Analyzer</title>
+  <desc id="desc">A local toolkit for turning conversation records into an audited dataset.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#0b2023"/>
+      <stop offset=".62" stop-color="#102c31"/>
+      <stop offset="1" stop-color="#173844"/>
+    </linearGradient>
+    <linearGradient id="accent">
+      <stop stop-color="#7be9ba"/>
+      <stop offset="1" stop-color="#75d9ed"/>
+    </linearGradient>
+    <pattern id="dots" width="19" height="19" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.1" fill="#b3eee4" opacity=".16"/>
+    </pattern>
+  </defs>
+
+  <rect x="1" y="1" width="1118" height="298" rx="22" fill="url(#bg)" stroke="#34565d" stroke-width="2"/>
+  <path d="M749 2h349q20 0 20 20v256q0 20-20 20H671z" fill="url(#dots)"/>
+  <path d="M52 252h594" stroke="#365659"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace">
+    <rect x="53" y="46" width="197" height="32" rx="16" fill="#163b38" stroke="#398073"/>
+    <circle cx="72" cy="62" r="4" fill="#7be9ba"/>
+    <text x="86" y="67" font-size="13" letter-spacing="1.45" fill="#a0f1ce">LOCAL DATA TOOLKIT</text>
+    <text x="53" y="275" fill="#8eb9bd" font-size="12" letter-spacing="2.5">JSONL  /  AUDIT  /  SHA-256</text>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="50" y="138" fill="#f5fcfd" font-size="57" font-weight="700" letter-spacing="-1.65">WeChat Friendship</text>
+    <text x="50" y="200" fill="url(#accent)" font-size="59" font-weight="700" letter-spacing="-1.5">Analyzer</text>
+    <text x="53" y="229" fill="#b6d3d6" font-size="17">From chat records to a verified dataset</text>
+  </g>
+
+  <g fill="none" stroke="#5d9497" stroke-width="1.5">
+    <path d="M808 99v33q0 16 16 16h44m-60 54v-34q0-20 20-20"/>
+    <path d="M868 148h30m115 0h52" stroke-dasharray="4 5"/>
+    <circle cx="869" cy="148" r="4" fill="#8be8cb" stroke="none"/>
+    <circle cx="1065" cy="148" r="4" fill="#76d8e6" stroke="none"/>
+  </g>
+  <g stroke-width="1.5">
+    <path d="M750 57h91a12 12 0 0 1 12 12v27a12 12 0 0 1-12 12h-65l-15 12v-12h-11a12 12 0 0 1-12-12V69a12 12 0 0 1 12-12z" fill="#1c4743" stroke="#5aab92"/>
+    <path d="M750 189h91a12 12 0 0 1 12 12v27a12 12 0 0 1-12 12h-12v12l-15-12h-64a12 12 0 0 1-12-12v-27a12 12 0 0 1 12-12z" fill="#1c3a46" stroke="#538d9d"/>
+    <path d="M756 77h74m-74 13h49" stroke="#83d1b7" stroke-linecap="round"/>
+    <path d="M756 209h68m-68 13h45" stroke="#80bdcf" stroke-linecap="round"/>
+    <rect x="898" y="91" width="115" height="112" rx="16" fill="#132e36" stroke="#58848e"/>
+    <path d="M915 112h81m-81 72h81" stroke="#3d5e65"/>
+    <path d="m929 148 15 15 33-33" fill="none" stroke="#83e6bc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="1.5" fill="#a8cbd0">
+    <text x="738" y="275">INPUT</text>
+    <text x="898" y="227">VERIFIED ZIP</text>
+  </g>
+</svg>
