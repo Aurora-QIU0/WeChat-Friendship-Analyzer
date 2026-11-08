@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "talker": "demo_friend",
+  "count": 4,
+  "hasMore": false,
+  "messages": [
+    {"localId": 1, "localType": 1, "createTime": 1738713600, "isSend": 1, "senderUsername": "demo_self", "content": "虚构示例：今天测试完成了。"},
+    {"localId": 2, "localType": 244813135921, "createTime": 1738713660, "isSend": 0, "senderUsername": "demo_friend", "content": "虚构示例：哪一步通过了？", "quote": {"content": "虚构示例：今天测试完成了。"}},
+    {"localId": 3, "localType": 3, "createTime": 1738713720, "isSend": 1, "senderUsername": "demo_self", "content": "[图片]", "mediaType": "image"},
+    {"localId": 4, "localType": 10000, "createTime": 1738713780, "content": "虚构系统事件"}
+  ]
+}

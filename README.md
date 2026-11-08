@@ -64,3 +64,14 @@ python -B -X utf8 scripts/package_data.py $checked `
 新增 [小鱼人物资料与配置](xiaoyu/README.md)：中文语音人格、三版提示词、自然接话与双向互动风格、原创对话示例，以及结构化记忆空模板。可为已有小智设备配置角色；自定义记忆后端仍属于设计，尚未实现。
 
 公开模块不包含真实聊天、私人用户画像、个人记忆、云端配置备份或截图。
+
+## WeFlow · 可选本地数据来源
+
+新增 [WeFlow 接入说明](docs/weflow-integration.md) 与 [离线转换器](scripts/import_weflow.py)。将单个私聊的 WeFlow 原始 API JSON 分页文件转换为本项目 JSONL，再运行现有校验和审计流程。
+
+```powershell
+python -B -X utf8 scripts/import_weflow.py examples/weflow_response.sample.json `
+  --expected-count 4 --output private_data/weflow_demo.jsonl
+```
+
+附带虚构样例和测试。不自动安装 WeFlow、不读取数据库或密钥、不联网获取聊天，也不复制上游应用源码。本版尚未验证真实 WeFlow 端到端运行；上游许可与原生组件要求见接入说明。
